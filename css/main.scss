@@ -1,0 +1,247 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Variables
+
+$m1: #997049; //brown
+$m2: #77ecf6; //brightblue
+$m3: #f2ea63; //canary
+$m4: #a8cf83; //green
+$s1: #eaeaea;
+
+$color-white: #FFF;
+
+$sans-serif: 'Roboto Condensed', sans-serif;
+
+$bp-portrait: 600px;
+$bp-landscape: 768px;
+$bp-desktop: 1024px;
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	margin: 0;
+	font-family: $sans-serif;
+	color: #777;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 40px;
+	background: $s1;
+}
+
+.bold-text {
+	font-weight: 700;
+}
+
+.light-text {
+	font-weight: 300;	
+}
+
+.banner {
+	position: relative;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@media (min-width: $bp-landscape) {
+		background-attachment: fixed;
+	}
+}
+
+.caption {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+	transform: translateY(-50%);
+	padding: 0;
+
+	@media (min-width: $bp-portrait) {
+	 	display: block;
+	 	padding: 20px;
+	}
+
+	.caption-inner {
+		font-size: 32px;
+		line-height: 38px;
+		padding: 10px;
+		display: inline-block;
+		width: 100%;
+		letter-spacing: 2px;
+
+		@media (min-width: $bp-portrait) {
+			font-size: 40px;
+			line-height: 50px;
+			width: auto;
+			padding: 10px 30px;
+		}
+
+		@media (min-width: $bp-landscape) {
+			font-size: 50px;
+			line-height: 60px;
+			padding: 15px 50px;
+		}
+
+		@media (min-width: $bp-landscape) {
+			letter-spacing: 5px;
+			padding: 20px 60px;
+		}
+	}
+}
+
+.banner-1 {
+	min-height: 100%;
+	position: relative;
+	overflow: hidden;
+	background-image: url('../assets/fountain-image.jpg');
+
+	@media (min-width: $bp-desktop) {
+		 background: $s1;
+  	}
+
+	.video {
+		position: fixed;
+		top: 50%; left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		transform: translate(-50%, -50%);
+		opacity: 0;
+		transition: 1s all;
+		display: none;
+
+		@media (min-width: $bp-desktop) {
+		 	display: block;
+  		}
+
+		&.visible {
+			opacity: 1;
+		}
+	}
+
+	.caption-inner {
+		background: rgba($m1, .65);
+		color: $color-white;
+
+		@media (min-width: $bp-desktop) {
+			font-size: 70px;
+			line-height: 70px;
+			width: auto;
+
+  		}
+	}
+}
+
+.banner-2 {
+	background-color: $s1;
+	background-image: url('../assets/aerial-image.png');
+	height: 100vh;
+	max-height: 580px;
+
+	.caption-inner {
+		color: $m2;
+		font-weight: 700;
+
+		@media (min-width: $bp-desktop) {
+			font-size: 60px;
+			line-height: 65px;
+  		}
+	}
+}
+
+.banner-3 {
+	background-color: $s1;
+	background-image: url('../assets/model-image.jpg');
+	min-height: 100vh;
+
+	.caption-inner {
+		background: rgba($m4, .65);
+		color: $color-white;
+		font-weight: 700;
+
+		@media (min-width: $bp-desktop) {
+			width: auto;
+			font-size: 42px;
+			line-height: 50px;
+  		}
+	}
+}
+
+.banner-4 {
+	background-color: $s1;
+	background-image: url('../assets/girl-image.jpg');
+	min-height: 100vh;
+
+	.caption-inner {
+		color: $m2;
+
+		@media (min-width: $bp-desktop) {
+			font-size: 70px;
+			font-weight: 700;
+		}
+	}
+}
+
+.message {
+	position: relative;
+	display: block;
+	padding: 0 20px;
+	width: 100%;
+	box-sizing: border-box;
+
+	.message-inner {
+		display: block;
+		margin: 0 auto;
+		padding: 30px 0;
+		color: $m1;
+		max-width: 1080px;
+		position: relative;
+
+		@media (min-width: $bp-desktop) {
+			padding: 50px 0;
+  		}
+	}
+}
+
+.message-1 {
+	background: $color-white;	
+}
+
+.message-2 {
+	background: $m3;	
+}
+
+.message-3 {
+	background: $m2;
+
+	.message-inner {
+
+		@media (min-width: $bp-desktop) {
+			padding: 25px 0;
+		}
+	}
+}	
+
+.message-4 {
+	background: $color-white;
+
+	.message-inner {
+
+		@media (min-width: $bp-desktop) {
+			padding: 25px 0;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}	
