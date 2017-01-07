@@ -1,6 +1,7 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
+
 @charset "utf-8";
 
 // Variables
@@ -17,7 +18,21 @@ $sans-serif: 'Roboto Condensed', sans-serif;
 
 $bp-portrait: 600px;
 $bp-landscape: 768px;
-$bp-desktop: 1024px;
+$bp-desktop: 1025px;
+
+// Initalize Font Icon
+
+@font-face {
+  font-family: 'IcoMoon';
+  src: url("../assets/icomoon/fonts/icomoon.eot");
+  src: 	url("../assets/icomoon/fonts/icomoon.eot?#iefix") format("embedded-opentype"), 
+  		url("../assets/icomoon/fonts/icomoon.woff2") format("woff2"), 
+  		url("../assets/icomoon/fonts/icomoon.woff") format("woff"), 
+  		url("../assets/icomoon/fonts/icomoon.ttf") format("truetype"), 
+  		url("../assets/icomoon/fonts/icomoon.svg#IcoMoon") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
 
 *, *:before, *:after {
 	box-sizing: border-box;
@@ -34,6 +49,16 @@ body, html {
 	background: $s1;
 }
 
+a {
+	color: $m1;
+	text-decoration: none;
+	transition: .3s all;
+
+	&:hover {
+		opacity: .8;
+	}
+}
+
 .bold-text {
 	font-weight: 700;
 }
@@ -48,8 +73,12 @@ body, html {
 	background-repeat: no-repeat;
 	background-size: cover;
 
-	@media (min-width: $bp-landscape) {
+	@media (min-width: $bp-desktop) {
 		background-attachment: fixed;
+	}
+
+	a {
+		color: $color-white;
 	}
 }
 
@@ -90,7 +119,7 @@ body, html {
 		}
 
 		@media (min-width: $bp-landscape) {
-			letter-spacing: 5px;
+			letter-spacing: 3px;
 			padding: 20px 60px;
 		}
 	}
@@ -100,7 +129,7 @@ body, html {
 	min-height: 100%;
 	position: relative;
 	overflow: hidden;
-	background-image: url('../assets/fountain-image.jpg');
+	background-image: url('../assets/fountain-image-min.jpg');
 
 	@media (min-width: $bp-desktop) {
 		 background: $s1;
@@ -135,14 +164,13 @@ body, html {
 			font-size: 70px;
 			line-height: 70px;
 			width: auto;
-
   		}
 	}
 }
 
 .banner-2 {
 	background-color: $s1;
-	background-image: url('../assets/aerial-image.png');
+	background-image: url('../assets/aerial-image-min.jpg');
 	height: 100vh;
 	max-height: 580px;
 
@@ -154,12 +182,16 @@ body, html {
 			font-size: 60px;
 			line-height: 65px;
   		}
+
+  		a {
+ 			color: $m2; 			
+  		}
 	}
 }
 
 .banner-3 {
 	background-color: $s1;
-	background-image: url('../assets/model-image.jpg');
+	background-image: url('../assets/model-image-min.jpg');
 	min-height: 100vh;
 
 	.caption-inner {
@@ -177,7 +209,7 @@ body, html {
 
 .banner-4 {
 	background-color: $s1;
-	background-image: url('../assets/girl-image.jpg');
+	background-image: url('../assets/girl-image-2-min.jpg');
 	min-height: 100vh;
 
 	.caption-inner {
@@ -187,6 +219,10 @@ body, html {
 			font-size: 70px;
 			font-weight: 700;
 		}
+
+		a {
+ 			color: $m2; 			
+  		}
 	}
 }
 
@@ -245,3 +281,28 @@ body, html {
 		}
 	}
 }	
+
+/*.page-link {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: rgba($color-white, .5);
+	padding: 0 20px 5px;
+	text-decoration: none;
+	z-index: 2;
+	color: $m1;
+	display: inline-block;
+	width: auto;
+	transition: .3s all;
+
+	&:after {
+		font-family: IcoMoon;
+		content: "\f178";
+		display: inline-block;
+		margin-left: 10px;
+	}
+
+	&:hover {
+		background: rgba($color-white, 1);
+	}
+}*/
